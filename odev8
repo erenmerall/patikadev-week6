@@ -1,0 +1,82 @@
+test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+
+
+-- 1. employee tablosunu oluştur
+CREATE TABLE employee (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(50),
+  birthday DATE,
+  email VARCHAR(100)
+);
+
+-- 2. 50 adet örnek veri ekle
+INSERT INTO employee (id, name, birthday, email) VALUES
+(1, 'Alice Johnson', '1988-03-15', 'alice.johnson@example.com'),
+(2, 'Bob Smith', '1975-07-22', 'bob.smith@example.com'),
+(3, 'Charlie Brown', '1990-01-30', 'charlie.brown@example.com'),
+(4, 'Diana Ross', '1982-12-05', 'diana.ross@example.com'),
+(5, 'Ethan Hunt', '1978-06-17', 'ethan.hunt@example.com'),
+(6, 'Fiona Gallagher', '1993-09-08', 'fiona.gallagher@example.com'),
+(7, 'George Michael', '1985-11-25', 'george.michael@example.com'),
+(8, 'Hannah Baker', '1991-04-12', 'hannah.baker@example.com'),
+(9, 'Ian Curtis', '1976-02-14', 'ian.curtis@example.com'),
+(10, 'Jane Eyre', '1989-08-03', 'jane.eyre@example.com'),
+(11, 'Kevin Malone', '1980-05-21', 'kevin.malone@example.com'),
+(12, 'Laura Palmer', '1992-10-11', 'laura.palmer@example.com'),
+(13, 'Michael Scott', '1972-03-10', 'michael.scott@example.com'),
+(14, 'Nina Simone', '1984-07-19', 'nina.simone@example.com'),
+(15, 'Oscar Wilde', '1979-01-27', 'oscar.wilde@example.com'),
+(16, 'Pam Beesly', '1990-06-02', 'pam.beesly@example.com'),
+(17, 'Quentin Tarantino', '1963-03-27', 'quentin.tarantino@example.com'),
+(18, 'Rachel Green', '1987-11-13', 'rachel.green@example.com'),
+(19, 'Sam Winchester', '1985-08-14', 'sam.winchester@example.com'),
+(20, 'Tina Turner', '1982-05-07', 'tina.turner@example.com'),
+(21, 'Uma Thurman', '1970-04-29', 'uma.thurman@example.com'),
+(22, 'Victor Hugo', '1975-09-01', 'victor.hugo@example.com'),
+(23, 'Wendy Darling', '1993-12-20', 'wendy.darling@example.com'),
+(24, 'Xander Cage', '1984-02-06', 'xander.cage@example.com'),
+(25, 'Yara Greyjoy', '1991-10-30', 'yara.greyjoy@example.com'),
+(26, 'Zoe Barnes', '1986-07-15', 'zoe.barnes@example.com'),
+(27, 'Aaron Paul', '1979-09-22', 'aaron.paul@example.com'),
+(28, 'Bella Swan', '1992-04-10', 'bella.swan@example.com'),
+(29, 'Caleb Rivers', '1988-01-18', 'caleb.rivers@example.com'),
+(30, 'Donna Paulsen', '1983-06-06', 'donna.paulsen@example.com'),
+(31, 'Eliot Spencer', '1977-03-25', 'eliot.spencer@example.com'),
+(32, 'Felicity Smoak', '1990-08-17', 'felicity.smoak@example.com'),
+(33, 'Gina Linetti', '1985-05-05', 'gina.linetti@example.com'),
+(34, 'Harvey Specter', '1980-12-02', 'harvey.specter@example.com'),
+(35, 'Ivy Pepper', '1994-09-09', 'ivy.pepper@example.com'),
+(36, 'Jack Sparrow', '1978-11-11', 'jack.sparrow@example.com'),
+(37, 'Kelly Kapoor', '1987-07-21', 'kelly.kapoor@example.com'),
+(38, 'Leonard Hofstadter', '1983-02-03', 'leonard.hofstadter@example.com'),
+(39, 'Monica Geller', '1984-05-29', 'monica.geller@example.com'),
+(40, 'Ned Stark', '1976-06-15', 'ned.stark@example.com'),
+(41, 'Olivia Pope', '1982-04-19', 'olivia.pope@example.com'),
+(42, 'Patrick Jane', '1979-08-28', 'patrick.jane@example.com'),
+(43, 'Queen Latifah', '1971-03-19', 'queen.latifah@example.com'),
+(44, 'Ron Swanson', '1973-09-05', 'ron.swanson@example.com'),
+(45, 'Sarah Connor', '1985-01-12', 'sarah.connor@example.com'),
+(46, 'Tom Haverford', '1984-10-27', 'tom.haverford@example.com'),
+(47, 'Ursula Buffay', '1975-07-08', 'ursula.buffay@example.com'),
+(48, 'Vince Gilligan', '1967-02-10', 'vince.gilligan@example.com'),
+(49, 'Will Byers', '1988-11-14', 'will.byers@example.com'),
+(50, 'Xena Warrior', '1990-12-24', 'xena.warrior@example.com');
+
+-- 3. Güncelleme işlemleri (5 adet)
+
+UPDATE employee SET name = 'Updated Name 1' WHERE id = 1;
+UPDATE employee SET email = 'updated.email1@example.com' WHERE name = 'Bob Smith';
+UPDATE employee SET birthday = '1980-01-01' WHERE email = 'charlie.brown@example.com';
+UPDATE employee SET name = 'Updated Name 4', email = 'updated4@example.com' WHERE id = 4;
+UPDATE employee SET birthday = '1991-05-05' WHERE name = 'Ethan Hunt';
+
+-- 4. Silme işlemleri (5 adet)
+
+DELETE FROM employee WHERE id = 5;
+DELETE FROM employee WHERE name = 'Fiona Gallagher';
+DELETE FROM employee WHERE birthday = '1991-04-12';
+DELETE FROM employee WHERE email = 'george.michael@example.com';
+DELETE FROM employee WHERE id = 10;
